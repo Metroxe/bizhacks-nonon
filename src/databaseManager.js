@@ -17,6 +17,7 @@ export default class DatabaseManager {
 
 	createSession() {
 		const session = new Session();
+		session.preInflate();
 		this.sessionArr.push(session);
 		return session;
 	}
