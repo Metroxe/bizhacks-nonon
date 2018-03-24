@@ -1,4 +1,5 @@
 import DatabaseManager from "../databaseManager";
+import Session from "../session";
 
 module.exports = (app) => {
 	app.get("/get_session", (req, res) => {
@@ -14,4 +15,14 @@ module.exports = (app) => {
 		const session = DatabaseManager.getInstance().createSession();
 		res.send(session);
 	});
+
+	app.post("/update_session", (req, res) => {
+		const body = req.body;
+		const replacementSession = new Session();
+		for (let key of body) {
+			replacementSession[key] = body[key];
+		}
+		DatabaseManager.getInstance().updateSession(replacementSession);
+		res.sendStatus(200);
+	})
 };

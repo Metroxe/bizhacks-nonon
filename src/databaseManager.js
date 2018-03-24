@@ -29,4 +29,13 @@ export default class DatabaseManager {
 		}
 		return undefined;
 	}
+
+	updateSession(session) {
+		for (let i = 0; i <  this.sessionArr.length; i++) {
+			if (this.sessionArr[i].customerCode === session.customerCode) {
+				this.sessionArr[i] = session;
+				return;
+			}
+		}
+	}
 }
