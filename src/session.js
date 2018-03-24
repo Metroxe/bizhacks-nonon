@@ -5,10 +5,10 @@ const randomrepName   = ["Ironman", "Starlord", "Stan Lee", "Hulk", "Thor", "Gro
 const randpostalCode  = ["L4T 1A8", "V6T 1Z4", "A1B 2C3", "O3M 2N6", "I9A 4V3", "Q2E 3V1", "P4M 8N8", "O0O 0O0", "E3E 3E3", "S2S 2S2"];
 const randCity        = ["Vancouver", "Toronto", "Halifax", "Montreal", "Ottawa", "Gotham", "Paris", "London", "Seoul", "Tokyo"];
 const randProv        = ["British Columbia", "Alberta", "Nova Scotia", "Quebec", "Ontario", "Prince Edward Island", "Manitoba"];
-const services        = [
-	{des: "TV Setup", price: 349.99},
-	{des: "Protection Plan", price: 49.99},
-	];
+const services        = {
+	tvSetup: {selected: false, price: 349.99, title: "TV Setup", category: "tv"},
+	insurancePackage: {selected: false, price: 49.99, title: "Insurance Package", category: "tv"}
+};
 //const randcardNo    = ["4532293777631532", "5440792610152489", "4532556754833556", "5506566476855802",
 // "5273910277446372", "5503306464560251", "5371179162607883", "5124984581790693", "4916420136817868",
 // "5124889147306852"];
@@ -36,7 +36,7 @@ export default class Session {
 		this.customerCode      = Session.randomString();
 		this.adminCode         = Session.randomString();
 		this.customerName      = "";
-		this.serviceArr        = [];
+		this.serviceArr        = services;
 		this.status            = false;
 		this.customer_address1 = "";
 		this.customer_address2 = "";
