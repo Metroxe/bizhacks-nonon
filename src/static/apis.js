@@ -37,6 +37,8 @@ function getSession() {
         session.repName = res.data.repName;
         session.date = res.data.date;
         prePopulate();
+        populateExpenses();
+        handleTotal();
     });
 }
 

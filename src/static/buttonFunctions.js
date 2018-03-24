@@ -45,6 +45,13 @@ function handleTotal() {
     Object.keys(session.serviceArr).forEach(function(i) {
         if(session.serviceArr[i].selected) {
             totalPriceTemp += session.serviceArr[i].price;
+            for(let j = 0; j < servicesCheckboxes.length; j++) {
+                if(servicesCheckboxes[j].value == i) {
+                    servicesCheckboxes[j].checked = true;
+                }
+            }
+        } else {
+
         }
     });
 
@@ -93,6 +100,16 @@ function populateExpenses() {
         }
     });
 };
+function prePopulate() {
+    for(let i = 0; i < saleInfoInputs.length; i++) {
+        Object.keys(session).forEach(function(j) {
+            if(saleInfoInputs[i].id === j) {
+                saleInfoInputs[i].value = session[j];
+            }
+        });
+    }
+}
+
 function prePopulate() {
     for(let i = 0; i < saleInfoInputs.length; i++) {
         Object.keys(session).forEach(function(j) {
