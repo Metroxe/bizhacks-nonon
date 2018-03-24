@@ -68,7 +68,7 @@ function submitForm() {
 function submitPayment() {
     submitForm().then((res) => {
         //redirect to thank you payment page
-
+        window.location.href = "http://" + window.location.host + "/thank_you_payment";
     });
 }
 
