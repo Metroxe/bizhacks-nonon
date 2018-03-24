@@ -17,4 +17,4 @@ module.exports = (app) => {
 			"<h2> Address:" + user.address + "</h2>"
 		);
 	});
-};
+}; 
