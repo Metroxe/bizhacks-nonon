@@ -1,4 +1,8 @@
 console.log("hey ray");
+let adminSubmitButton = document.getElementById("adminSubmitButton");
+adminSubmitButton.addEventListener("click", function() {
+    submitAdmin();
+});
 
 let servicesCheckboxes = document.getElementsByClassName("services-checkbox");
 
@@ -10,5 +14,6 @@ for(let i = 0; i < servicesCheckboxes.length; i++) {
 };
 
 function toggleCheckbox(checkValue) {
-    console.log("serviceArr: ", serviceArr);
+    serviceArr[checkValue].selected = !serviceArr[checkValue].selected;
+    console.log(serviceArr[checkValue].selected);
 }

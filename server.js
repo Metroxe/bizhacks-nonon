@@ -6,6 +6,14 @@ const thankYouAdmin = require("./src/pages/thankYouAdmin");
 const thankYouPaymentPage = require("./src/pages/thankYouPayment");
 const data = require("./src/pages/data");
 const sessionsAPIs = require("./src/apis/sessionsAPIs");
+const bodyParser = require('body-parser');
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 
 //create routes
 paymentPage(app);
