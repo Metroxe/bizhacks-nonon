@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
 }
 
+.gsLogo {
+    width: 15%;
+    min-width: 60px;
+}
+
 .bb-color {
     background-color: #e37222;
 }
