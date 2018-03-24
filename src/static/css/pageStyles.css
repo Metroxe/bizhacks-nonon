@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #e37222;
 }
 
+.confirmBtn {
+    font-size: 12pt;
+    font-weight: 900;
+    padding: 10px 20px;
+}
+
 .full-width-div {
     width: 100%;
 }
