@@ -17,7 +17,7 @@ module.exports = (app) => {
 	});
 
 	app.post("/update_session", (req, res) => {
-		const body = req.body;
+		const body = req.data;
 		const replacementSession = new Session();
 		for (let key of body) {
 			replacementSession[key] = body[key];
