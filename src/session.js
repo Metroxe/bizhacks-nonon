@@ -39,7 +39,7 @@ export default class Session {
 
 	static randomString() {
 		let text       = "";
-		const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		const possible = "abcdefghijklmnopqrstuvwxyz0123456789";
 
 		for (let i = 0; i < 5; i++)
 			text += possible.charAt(Math.floor(Math.random() * possible.length));
