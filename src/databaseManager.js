@@ -32,9 +32,11 @@ export default class DatabaseManager {
 	}
 
 	updateSession(session) {
-		for (let i = 0; i <  this.sessionArr.length; i++) {
-			if (this.sessionArr[i].customerCode === session.customerCode) {
+        console.log(session);
+        for (let i = 0; i <  this.sessionArr.length; i++) {
+			if (this.sessionArr[i].customerCode == session.customerCode) {
 				this.sessionArr[i] = session;
+				console.log("replaced");
 				return;
 			}
 		}

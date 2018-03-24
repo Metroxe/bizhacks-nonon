@@ -1,5 +1,40 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+.gsLogo {
+    width: 15%;
+    min-width: 60px;
+}
+
+.bb-color {
+    background-color: #e37222;
+}
+
+.full-width-div {
+    width: 100%;
+}
+
+.highlightHeader {
+    background-color: #e37222;
+}
+
+.tintHeader {
+    background-color: #FFE1CC;
+}
+
 #repInfoContainer {
     /*background-color: aqua;*/
+}
+
+.infoSection {
+    margin-bottom: 40px;
 }
 
 .infoSectionTitle {
@@ -10,10 +45,37 @@
     border-radius: 8px;
     background: #F5F5F5;
     border: 1px solid #E4E4E4;
-    border-radius: 8px;
     padding: 20px;
+}
+
+#expensesBreakdownForm {
+    padding-bottom: 45px;
 }
 
 .inputLabel {
     font-weight: bold;
+}
+
+.inlineSubHeader {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.inlineBlockClass {
+    display: inline-block;;
+}
+
+.expenseListItem:nth-child(odd) {
+    background-color: white;
+}
+
+#totalPriceDisplay {
+    float: right;
+}
+
+#totalPriceInput {
+    text-align: right;
+    width: 100px;
+    margin-left: 10px;
+    padding-right: 5px;
 }

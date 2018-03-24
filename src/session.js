@@ -66,7 +66,7 @@ export default class Session {
 		this.expirationMonth   = 0;
 		this.expirationYear    = 0;
 		this.repName           = "";
-		this.date              = new Date();
+		this.date              = new Date().toDateString()
 	}
 
 	static randomString() {
