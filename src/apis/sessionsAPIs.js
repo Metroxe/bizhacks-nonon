@@ -18,14 +18,14 @@ module.exports = (app) => {
 	});
 
 	app.post("/update_session", (req, res) => {
-		const body = req.body;
-		console.log(req.body);
-		const replacementSession = new Session();
-		const keys = Object.keys(body);
-		for (let key in keys) {
-			replacementSession[key] = body[key];
-		}
-		DatabaseManager.getInstance().updateSession(replacementSession);
+		// const body = req.body;
+		// const replacementSession = new Session();
+		// const keys = Object.keys(body);
+		// for (let key in keys) {
+		// 	replacementSession[key] = body[key];
+		// }
+		DatabaseManager.getInstance().updateSession(req.body);
+		console.log(DatabaseManager.getInstance().sessionArr);
 		res.sendStatus(200);
 	})
 };

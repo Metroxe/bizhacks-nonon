@@ -27,15 +27,15 @@
                 <div class="infoSectionForm" id="repInfoFormDiv">
                     <form>
                         <div class="form-group row">
-                            <label for="repNameInput" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
+                            <label for="repName" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="repNameInput" placeholder="Rep. Name"/>
+                                <input type="text" class="form-control sale-info-input" id="repName" placeholder="Rep. Name"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="dateInput" class="col-5 col-form-label text-right inputLabel">Date</label>
+                            <label for="date" class="col-5 col-form-label text-right inputLabel">Date</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="dateInput" placeholder="Date"/>
+                                <input type="text" class="form-control sale-info-input" id="date" placeholder="Date"/>
                             </div>
                         </div>
                     </form>
@@ -52,33 +52,39 @@
                 <div class="infoSectionForm" id="customerFormDiv">
                     <form>
                         <div class="form-group row">
-                            <label for="fullNameInput" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                            <label for="customerName" class="col-5 col-form-label text-right inputLabel">Full Name</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="fullNameInput" placeholder="Full Name"/>
+                                <input type="text" class="form-control sale-info-input" id="customerName" placeholder="Full Name"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="addressInput" class="col-5 col-form-label text-right inputLabel">Address</label>
+                            <label for="customer_address1" class="col-5 col-form-label text-right inputLabel">Address 1</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="addressInput" placeholder="Address"/>
+                                <input type="text" class="form-control sale-info-input" id="customer_address1" placeholder="Address 1"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="cityInput" class="col-5 col-form-label text-right inputLabel">City</label>
+                            <label for="customer_address2" class="col-5 col-form-label text-right inputLabel">Address 2</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="cityInput" placeholder="City"/>
+                                <input type="text" class="form-control sale-info-input" id="customer_address2" placeholder="Address 2"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="postalInput" class="col-5 col-form-label text-right inputLabel">Postal Code</label>
+                            <label for="city" class="col-5 col-form-label text-right inputLabel">City</label>
                             <div class="col-7">
-                                <input type="text" class="form-control" id="postalInput" placeholder="Postal Code"/>
+                                <input type="text" class="form-control sale-info-input" id="city" placeholder="City"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalCode" class="col-5 col-form-label text-right inputLabel">Postal Code</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="postalCode" placeholder="Postal Code"/>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="provinceInput" class="col-5 col-form-label text-right inputLabel">Province</label>
+                            <label for="province" class="col-5 col-form-label text-right inputLabel">Province</label>
                             <div class="col-3 dropdown">
-                                <select id="provinceInput" class="btn btn-secondary dropdown-toggle">
+                                <select id="province" class="btn btn-secondary dropdown-toggle sale-info-input">
                                     <option value=""></option>
                                     <option value="AB">AB</option>
                                     <option value="BC">BC</option>
@@ -349,6 +355,9 @@
                     </div>
                 </div>
             </div>
+
+            <!--Expenses breakdown -->
+
             <div class="infoSection" id="priceTallyContainer">
                 <div class="infoSectionTitle">
                     <h2>
@@ -356,24 +365,36 @@
                     </h2>
                 </div>
 
-                <div class="infoSectionForm" id="repInfoFormDiv">
-                    <form>
-                        <div class="form-group row">
-                            <label for="repNameInput" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
-                            <div class="col-7">
-                                <input type="text" class="form-control" id="repNameInput" placeholder="Rep. Name"/>
+                <div class="infoSectionForm" id="expensesBreakdownForm">
+                    <div id="expensesTable">
+                        <div id="expensesTableSubHeaders">
+                            <div class="inlineSubHeader">
+                                Service
+                            </div>
+                            <div class="inlineSubHeader float-right">
+                                Price
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="dateInput" class="col-5 col-form-label text-right inputLabel">Date</label>
-                            <div class="col-7">
-                                <input type="text" class="form-control" id="dateInput" placeholder="Date"/>
+                        <hr/>
+                        <div id="expensesListDisplay">
+                            <!--dynamic list goes here -->
+                        </div>
+                        <hr/>
+                        <div id="totalPriceDisplay">
+                            <div class="inlineBlockClass font-weight-bold">
+                                Total
+                            </div>
+                            <div class="inlineBlockClass" id="totalPriceInputContainer">
+                                <input id="totalPriceInput" type="text" disabled/>
+
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+
             <!-- submit button -->
+
             <div class="infoSection" id="priceTallyContainer">
                 <div class="infoSectionTitle">
                     <h2>
@@ -381,7 +402,7 @@
                     </h2>
                 </div>
 
-                <div class="infoSectionForm" id="repInfoFormDiv">
+                <div class="infoSectionForm">
                     <button id="adminSubmitButton">
                         SUBMIT ADMIN
                     </button>

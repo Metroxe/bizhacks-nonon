@@ -24,10 +24,37 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     background: #F5F5F5;
     border: 1px solid #E4E4E4;
-    border-radius: 8px;
     padding: 20px;
+}
+
+#expensesBreakdownForm {
+    padding-bottom: 45px;
 }
 
 .inputLabel {
     font-weight: bold;
+}
+
+.inlineSubHeader {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.inlineBlockClass {
+    display: inline-block;;
+}
+
+.expenseListItem:nth-child(odd) {
+    background-color: white;
+}
+
+#totalPriceDisplay {
+    float: right;
+}
+
+#totalPriceInput {
+    text-align: right;
+    width: 100px;
+    margin-left: 10px;
+    padding-right: 5px;
 }
