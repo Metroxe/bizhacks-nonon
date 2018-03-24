@@ -7,7 +7,25 @@ const randCity        = ["Vancouver", "Toronto", "Halifax", "Montreal", "Ottawa"
 const randProv        = ["British Columbia", "Alberta", "Nova Scotia", "Quebec", "Ontario", "Prince Edward Island", "Manitoba"];
 const services        = {
 	tvSetup: {selected: false, price: 349.99, title: "TV Setup", category: "tv"},
-	insurancePackage: {selected: false, price: 49.99, title: "Insurance Package", category: "tv"}
+    surraudSetup: {selected: false, price: 149.99, title: "Surround Audio Setup", category: "tv"},
+    wireaudSetup: {selected: false, price: 99.99, title: "Wireless Audio Setup", category: "tv"},
+    soundbarSetup: {selected: false, price: 99.99, title: "Sound Bar Setup", category: "tv"},
+	//tvprotectPlan: {selected: false, price: 49.99, title: "TV Protection Plan", category: "tv"},
+    compSetup: {selected: false, price: 169.99, title: "Computer Setup", category: "computer"},
+    compprotectPlan: {selected: false, price: 49.99, title: "Computer Protection Service Plan", category: "computer"},
+    phoneSetup: {selected: false, price: 29.99, title: "Phone Setup", category: "cell phone"},
+    phoneprotectPlan: {selected: false, price: 19.99, title: "Phone Protection Plan", category: "cell phone"},
+    tabletSetup: {selected: false, price: 39.99, title: "Tablet Setup", category: "tablet"},
+    tabletprotectPlan: {selected: false, price: 19.99, title: "Tablet Protection Plan", category: "tablet"},
+    appliancesSetup: {selected: false, price: 159.99, title: "Appliances Setup", category: "appliances"},
+    appliancesprotectPlan: {selected: false, price: 69.99, title: "Appliances Protection Plan", category: "appliances"},
+    smarthomeSetup: {selected: false, price: 359.99, title: "Smart Home Setup", category: "home networking"},
+    smarthomeprotectPlan: {selected: false, price: 99.99, title: "Smart Home Protection, Replacement Plan", category: "home networking"},
+    gamingconsoleSetup: {selected: false, price: 59.99, title: "Gaming Console Setup", category: "gaming"},
+    gamingprotectPlan: {selected: false, price: 19.99, title: "Gaming Console Protection Plan", category: "gaming"},
+    camprotectPlan: {selected: false, price: 39.99, title: "Camera Protection Plan", category: "camera"},
+	wearableSetup: {selected: false, price: 59.99, title: "Wearable Device Setup", category: "wearable"},
+    wearableprotectPlan: {selected: false, price: 29.99, title: "Wearable Device Protection Plan", category: "wearable"}
 };
 //const randcardNo    = ["4532293777631532", "5440792610152489", "4532556754833556", "5506566476855802",
 // "5273910277446372", "5503306464560251", "5371179162607883", "5124984581790693", "4916420136817868",
