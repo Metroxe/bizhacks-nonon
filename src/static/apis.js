@@ -64,14 +64,13 @@ function submitPayment() {
 	submitForm().then((res) => {
 		//redirect to thank you payment page
 
-	})
+	});
 }
 
 function submitAdmin() {
 	submitForm().then((res) => {
-		//redirect to url display page
-
-	})
+		window.location.href = window.location.host + "/thank_you_admin?id=" + customerCode;
+	});
 }
 
 function getParameterByName(name, url) {
