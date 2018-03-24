@@ -1,0 +1,19 @@
+#repInfoContainer {
+    /*background-color: aqua;*/
+}
+
+.infoSectionTitle {
+    margin-bottom: 20px;
+}
+
+.infoSectionForm {
+    border-radius: 8px;
+    background: #F5F5F5;
+    border: 1px solid #E4E4E4;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.inputLabel {
+    font-weight: bold;
+}

@@ -8,13 +8,11 @@ const database = {
 		address: "321 fake street"
 	}
 };
+const path = require('path');
 
 module.exports = (app) => {
 	app.get("/payment", (req, res) => {
 		const user = database[req.query.id];
-		res.send(
-			"<h1>Name: " + user.name + "</h1>" +
-			"<h2> Address:" + user.address + "</h2>"
-		);
+		res.sendFile(path.join(__dirname + '/html/payment.html'));
 	});
 }; 
