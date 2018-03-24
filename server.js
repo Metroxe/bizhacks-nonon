@@ -1,22 +1,18 @@
 const express = require("express");
 const app     = express();
+const paymentPage = require("./src/pages/payment");
+const adminPage = require("./src/pages/admin");
+const thankYouAdmin = require("./src/pages/thankYouAdmin");
+const thankYouPaymentPage = require("./src/pages/thankYouPayment");
+const data = require("./src/pages/data");
 
-const database = {
-	abc: {
-		name: "Thomas",
-		address: "123 fake street"
-	},
-	bcd: {
-		name: "Spencer",
-		address: "321 fake street"
-	}
-};
+//create routes
+paymentPage(app);
+adminPage(app);
+thankYouPaymentPage(app);
+thankYouAdmin(app);
+data(app);
 
-app.get("/payment", (req, res) => {
-	const user = database[req.query.id];
-	res.send("<h1>Name: "+user.name+"</h1>" +
-	"<h2> Address:" + user.address+ "</h2>"
-	);
-});
+app.use('/static', express.static('src/static'));
 
-app.listen(3000, () => console.log("GeekSquad App listening on port 3000"));
+app.listen(3000, () => console.log("GeekSquad Payment Page listening on port 3000"));
