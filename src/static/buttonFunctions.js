@@ -1,10 +1,20 @@
 let totalPrice = 0;
 
 let adminSubmitButton = document.getElementById("adminSubmitButton");
-adminSubmitButton.addEventListener("click", function() {
-    setAdminValues();
-    submitAdmin();
-});
+if (adminSubmitButton) {
+    adminSubmitButton.addEventListener("click", function () {
+        setAdminValues();
+        submitAdmin();
+    });
+}
+
+let paymentSubmitButton = document.getElementById("paymentSubmitButton");
+if (paymentSubmitButton) {
+    paymentSubmitButton.addEventListener("click", function () {
+        setAdminValues();
+        submitPayment();
+    });
+}
 
 let servicesCheckboxes = document.getElementsByClassName("services-checkbox");
 let accordianHeaders = document.getElementsByClassName("mb-0");
