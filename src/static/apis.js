@@ -57,9 +57,21 @@ function submitForm() {
 		repName: repName,
 		date: date
 	};
-	axios.post("/update_session").then((res) => {
-		//redirect to thank you page
-	});
+	return axios.post("/update_session", session);
+}
+
+function submitPayment() {
+	submitForm().then((res) => {
+		//redirect to thank you payment page
+
+	})
+}
+
+function submitAdmin() {
+	submitForm().then((res) => {
+		//redirect to url display page
+
+	})
 }
 
 function getParameterByName(name, url) {
