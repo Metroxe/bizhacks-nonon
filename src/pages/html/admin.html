@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/css/pageStyles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="jumbotron full-width-div bb-color" id="banner">
+        <div class="container">
+            <img class="gsLogo" src="../../static/assets/geeksquadlogo.png" alt="Best Buy Logo" />
+        </div>
+    </div>
+    <div id="contentContainer" class="container">
+
+        <div id="paymentContent">
+
+            <div class="infoSection" id="repInfoContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Rep. Info
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="repInfoFormDiv">
+                    <form>
+                        <div class="form-group row">
+                            <label for="repName" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="repName" placeholder="Rep. Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-5 col-form-label text-right inputLabel">Date</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="date" placeholder="Date"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="infoSection" id="customerContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Customer
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="customerFormDiv">
+                    <form>
+                        <div class="form-group row">
+                            <label for="customerName" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customerName" placeholder="Full Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="customer_address1" class="col-5 col-form-label text-right inputLabel">Address 1</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customer_address1" placeholder="Address 1"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="customer_address2" class="col-5 col-form-label text-right inputLabel">Address 2</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customer_address2" placeholder="Address 2"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-5 col-form-label text-right inputLabel">City</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="city" placeholder="City"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalCode" class="col-5 col-form-label text-right inputLabel">Postal Code</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="postalCode" placeholder="Postal Code"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="province" class="col-5 col-form-label text-right inputLabel">Province</label>
+                            <div class="col-3 dropdown">
+                                <input type="text" class="form-control sale-info-input" id="province" placeholder="Province"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="infoSection" id="servicesContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Services
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="servicesFormDiv">
+                    <div id="accordion" role="tablist">
+                        <div class="card">
+                            <div class="card-header highlightHeader text-white" role="tab" id="headingOne">
+                                <h5 class="mb-0">
+                                    <div data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        TVs and Home Theatre
+                                    </div>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="tvSetup" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            TV Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="surraudSetup" id="defaultCheck2">
+                                        <label class="form-check-label" for="defaultCheck2">
+                                            Surround Audio Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="wireaudSetup" id="defaultCheck3">
+                                        <label class="form-check-label" for="defaultCheck3">
+                                            Wireless Audio Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="soundbarSetup" id="defaultCheck4">
+                                        <label class="form-check-label" for="defaultCheck4">
+                                            Sound Bar Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="tvprotectPlan" id="defaultCheck5">
+                                        <label class="form-check-label" for="defaultCheck5">
+                                            TV Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Computers
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="compSetup" id="defaultCheck6">
+                                        <label class="form-check-label" for="defaultCheck6">
+                                            Computer Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="compprotectPlan" id="defaultCheck7">
+                                        <label class="form-check-label" for="defaultCheck7">
+                                            Computer Protection Service Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Cell Phones
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="phoneSetup" id="defaultCheck8">
+                                        <label class="form-check-label" for="defaultCheck8">
+                                            Phone Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="phoneprotectPlan" id="defaultCheck9">
+                                        <label class="form-check-label" for="defaultCheck9">
+                                            Phone Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Tablets
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="tabletSetup" id="defaultCheck10">
+                                        <label class="form-check-label" for="defaultCheck10">
+                                            Tablet Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="tabletprotectPlan" id="defaultCheck11">
+                                        <label class="form-check-label" for="defaultCheck11">
+                                            Tablet Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFive">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Appliances
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="appliancesSetup" id="defaultCheck12">
+                                        <label class="form-check-label" for="defaultCheck12">
+                                            Appliances Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="appliancesprotectPlan" id="defaultCheck13">
+                                        <label class="form-check-label" for="defaultCheck13">
+                                            Appliances Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSix">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Home Networking
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="smarthomeSetup" id="defaultCheck14">
+                                        <label class="form-check-label" for="defaultCheck14">
+                                            Smart Home Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="smarthomeprotectPlan" id="defaultCheck15">
+                                        <label class="form-check-label" for="defaultCheck15">
+                                            Smart Home Protection
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingSeven">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        Gaming
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="gamingconsoleSetup" id="defaultCheck16">
+                                        <label class="form-check-label" for="defaultCheck16">
+                                            Gaming Console Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="gamingprotectPlan" id="defaultCheck17">
+                                        <label class="form-check-label" for="defaultCheck17">
+                                            Gaming Console Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingEight">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        Camera
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="camprotectPlan" id="defaultCheck18">
+                                        <label class="form-check-label" for="defaultCheck18">
+                                            Camera Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingNine">
+                                <h5 class="mb-0">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        Wearables
+                                    </div>
+                                </h5>
+                            </div>
+                            <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="wearableSetup" id="defaultCheck19">
+                                        <label class="form-check-label" for="defaultCheck19">
+                                            Wearable Device Setup
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input services-checkbox" type="checkbox" value="wearableprotectPlan" id="defaultCheck20">
+                                        <label class="form-check-label" for="defaultCheck20">
+                                            Wearable Device Protection Plan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Expenses breakdown -->
+
+            <div class="infoSection" id="priceTallyContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Expenses Breakdown
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="expensesBreakdownForm">
+                    <div id="expensesTable">
+                        <div id="expensesTableSubHeaders">
+                            <div class="inlineSubHeader">
+                                Service
+                            </div>
+                            <div class="inlineSubHeader float-right">
+                                Price
+                            </div>
+                        </div>
+                        <hr/>
+                        <div id="expensesListDisplay">
+                            <!--dynamic list goes here -->
+                        </div>
+                        <hr/>
+                        <div id="totalPriceDisplay">
+                            <div class="inlineBlockClass font-weight-bold">
+                                Total
+                            </div>
+                            <div class="inlineBlockClass" id="totalPriceInputContainer">
+                                <input id="totalPriceInput" type="text" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- submit button -->
+    <div class="infoSection">
+        <div class="text-center" id="repInfoFormDiv">
+            <button class="btn btn-warning text-white" id="adminSubmitButton">
+                SUBMIT
+            </button>
+        </div>
+    </div>
+
+    <script src="../../static/apis.js"></script>
+    <script src="../../static/buttonFunctions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

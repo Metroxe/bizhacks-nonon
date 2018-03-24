@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/css/pageStyles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <body>
+    <div class="jumbotron full-width-div bb-color" id="banner">
+        <div class="container">
+            <img class="gsLogo" src="../../static/assets/geeksquadlogo.png" alt="Best Buy Logo" />
+        </div>
+    </div>
+    <div id="clientContentContainer" class="container">
+
+        <div id="adminContent">
+
+            <div class="infoSection" id="repInfoContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Details
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="repInfoFormDiv">
+                    <form>
+                        <div class="form-group row">
+                            <label for="repName" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="repName" placeholder="Rep. Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-5 col-form-label text-right inputLabel">Date</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="date" placeholder="Date"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="infoSection" id="priceTallyContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Expenses Breakdown
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="expensesBreakdownForm">
+                    <div id="expensesTable">
+                        <div id="expensesTableSubHeaders">
+                            <div class="inlineSubHeader">
+                                Service
+                            </div>
+                            <div class="inlineSubHeader float-right">
+                                Price
+                            </div>
+                        </div>
+                        <hr/>
+                        <div id="expensesListDisplay">
+                            <!--dynamic list goes here -->
+                        </div>
+                        <hr/>
+                        <div id="totalPriceDisplay">
+                            <div class="inlineBlockClass font-weight-bold">
+                                Total
+                            </div>
+                            <div class="inlineBlockClass" id="totalPriceInputContainer">
+                                <input id="totalPriceInput" type="text" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="paymentContent">
+            <div class="infoSection" id="paymentContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Payment
+                    </h2>
+                </div>
+
+                <div class="infoSection infoSectionForm text-center" id="customerFormDiv">
+                    <form>
+                        <label class="inputLabel">BILLING INFORMATION</label>
+                        <div class="form-group row">
+                            <label for="customerName" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customerName" placeholder="Full Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="customer_address1" class="col-5 col-form-label text-right inputLabel">Address 1</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customer_address1" placeholder="Address 1"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="customer_address2" class="col-5 col-form-label text-right inputLabel">Address 2</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="customer_address2" placeholder="Address 2"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-5 col-form-label text-right inputLabel">City</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="city" placeholder="City"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalCode" class="col-5 col-form-label text-right inputLabel">Postal Code</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control sale-info-input" id="postalCode" placeholder="Postal Code"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="province" class="col-5 col-form-label text-right inputLabel">Province</label>
+                            <div class="col-3 dropdown">
+                                <input type="text" class="form-control sale-info-input" id="province" placeholder="Province"/>
+                            </div>
+                        </div>
+
+                        <div class="text-center" id="customerFormDiv">
+                            <label class="inputLabel">CREDIT CARD INFO</label>
+                            <div class="form-group row">
+                                <label for="customerName" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                                <div class="col-7">
+                                    <input type="text" class="form-control sale-info-input" id="customerName" placeholder="Full Name"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalInput" class="col-5 col-form-label text-right inputLabel">Card Number</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="postalInput" placeholder="Card Number"/>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <label for="cvvInput" class="col-5 col-form-label text-right inputLabel">CVV</label>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="cvvInput" placeholder="CVV"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="monthInput" class="col-5 col-form-label text-right inputLabel">Expiry</label>
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-3 dropdown">
+                                    <select id="monthInput" class="btn dropdown-toggle">
+                                        <option value=""></option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-3 dropdown">
+                                    <select id="yearInput" class="btn dropdown-toggle">
+                                        <option value=""></option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="infoSection">
+                    <div class="text-center" id="repInfoFormDiv">
+                        <button class="btn btn-warning text-white" id="adminSubmitButton">
+                            SUBMIT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        <script src="../../static/apis.js"></script>
+        <script src="../../static/buttonFunctions.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
