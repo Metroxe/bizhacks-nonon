@@ -13,6 +13,6 @@ const path = require('path');
 module.exports = (app) => {
 	app.get("/payment", (req, res) => {
 		const user = database[req.query.id];
-		res.sendFile(path.join(__dirname + '/html/payment.html'));
+		res.sendFile(path.join(__dirname + '/html/admin.html'));
 	});
 }; 
