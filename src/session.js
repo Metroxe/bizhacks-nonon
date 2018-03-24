@@ -10,7 +10,7 @@ const services        = {
     surraudSetup: {selected: false, price: 149.99, title: "Surround Audio Setup", category: "tv"},
     wireaudSetup: {selected: false, price: 99.99, title: "Wireless Audio Setup", category: "tv"},
     soundbarSetup: {selected: false, price: 99.99, title: "Sound Bar Setup", category: "tv"},
-	//tvprotectPlan: {selected: false, price: 49.99, title: "TV Protection Plan", category: "tv"},
+	tvprotectPlan: {selected: false, price: 49.99, title: "TV Protection Plan", category: "tv"},
     compSetup: {selected: false, price: 169.99, title: "Computer Setup", category: "computer"},
     compprotectPlan: {selected: false, price: 49.99, title: "Computer Protection Service Plan", category: "computer"},
     phoneSetup: {selected: false, price: 29.99, title: "Phone Setup", category: "cell phone"},
