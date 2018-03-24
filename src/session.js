@@ -2,7 +2,7 @@ const randomAddress1s = ["123 fake street", "abc phony drive"];
 const randomAddress2s = ["", "po box #1234"];
 
 
-class Session {
+export default class Session {
 	customerCode;
 	adminCode;
 	serviceArr;
@@ -26,19 +26,19 @@ class Session {
 		this.status            = false;
 		this.customer_address1 = "";
 		this.customer_address2 = "";
-		this.city = "";
-		this.province = "";
-		this.postalCode = "";
-		this.cardNo = "";
-		this.cvv = "";
-		this.expirationMonth = "";
-		this.expirationYear = "";
-		this.repName = "";
-		this.date = new Date();
+		this.city              = "";
+		this.province          = "";
+		this.postalCode        = "";
+		this.cardNo            = "";
+		this.cvv               = "";
+		this.expirationMonth   = "";
+		this.expirationYear    = "";
+		this.repName           = "";
+		this.date              = new Date();
 	}
 
 	static randomString() {
-		let text = "";
+		let text       = "";
 		const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 		for (let i = 0; i < 5; i++)

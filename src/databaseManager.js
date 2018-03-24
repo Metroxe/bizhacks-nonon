@@ -1,5 +1,5 @@
-const Session = require("session");
-class DatabaseManager {
+import Session from "./session";
+export default class DatabaseManager {
 	static instance;
 	sessionArr;
 
@@ -7,9 +7,10 @@ class DatabaseManager {
 		this.sessionArr = [];
 	}
 
-	getInstance() {
+	static getInstance() {
 		if (!DatabaseManager.instance) {
 			DatabaseManager.instance = new DatabaseManager();
+			DatabaseManager.instance.createSession();
 		}
 		return DatabaseManager.instance;
 	}
