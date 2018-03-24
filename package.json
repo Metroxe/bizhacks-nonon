@@ -1,0 +1,10 @@
+{
+  "name": "bizhacks-nonon",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "Christopher Powroznik <chrispow96@gmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
