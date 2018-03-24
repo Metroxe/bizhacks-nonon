@@ -10,10 +10,12 @@
 </head>
 <body>
 
-    <div id="contentContainer" class="container">
-        <div id="banner">
-
+    <div class="jumbotron full-width-div bb-color" id="banner">
+        <div class="container">
+            <h1 class="text-white">Best Buy Geek Squad</h1>
         </div>
+    </div>
+    <div id="contentContainer" class="container">
 
         <div id="paymentContent">
 
@@ -78,7 +80,7 @@
                         <div class="row">
                             <label for="provinceInput" class="col-5 col-form-label text-right inputLabel">Province</label>
                             <div class="col-3 dropdown">
-                                <select id="provinceInput" class="btn btn-secondary dropdown-toggle">
+                                <select id="provinceInput" class="btn dropdown-toggle">
                                     <option value=""></option>
                                     <option value="AB">AB</option>
                                     <option value="BC">BC</option>
@@ -109,7 +111,7 @@
                 <div class="infoSectionForm" id="servicesFormDiv">
                     <div id="accordion" role="tablist">
                         <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
+                            <div class="card-header highlightHeader text-white" role="tab" id="headingOne">
                                 <h5 class="mb-0">
                                     <div data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         TVs and Home Theatre
@@ -374,19 +376,14 @@
                 </div>
             </div>
             <!-- submit button -->
-            <div class="infoSection" id="priceTallyContainer">
-                <div class="infoSectionTitle">
-                    <h2>
-                        SUBMIT BUTTON
-                    </h2>
+                <div class="infoSection">
+                    <div class="text-center" id="repInfoFormDiv">
+                        <button class="btn btn-warning text-white" id="adminSubmitButton">
+                            SUBMIT
+                        </button>
+                    </div>
                 </div>
 
-                <div class="infoSectionForm" id="repInfoFormDiv">
-                    <button id="adminSubmitButton">
-                        SUBMIT ADMIN
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 
