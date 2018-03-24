@@ -69,7 +69,6 @@ export default class Session {
 		this.postalCode        = Session.getRandomFromArray(randpostalCode);
 		this.city              = Session.getRandomFromArray(randCity);
 		this.province          = Session.getRandomFromArray(randProv);
-		console.log(this);
 		//this.cardNo = Session.getRandomFromArray(randcardNo);
 		//this.cvv = Math.floor((Math.random() * 900) + 100);
 		//this.expirationMonth = Math.floor((Math.random() * 12)+1);
