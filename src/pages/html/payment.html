@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/css/pageStyles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <body>
+    <div class="jumbotron full-width-div bb-color" id="banner">
+        <div class="container">
+            <h1 class="text-white">Best Buy Geek Squad</h1>
+        </div>
+    </div>
+    <div id="clientContentContainer" class="container">
+
+        <div id="adminContent">
+
+            <div class="infoSection" id="repInfoContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Details
+                    </h2>
+                </div>
+
+                <div class="infoSectionForm" id="repInfoFormDiv">
+                    <form>
+                        <div class="form-group row">
+                            <label for="repNameInput" class="col-5 col-form-label text-right inputLabel">Rep. Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="repNameInput" placeholder="Rep. Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="dateInput" class="col-5 col-form-label text-right inputLabel">Date</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="dateInput" placeholder="Date"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="infoSection">** PAYMENT STUFF GOES HERE **</h1>
+        </div>
+
+        <div id="paymentContent">
+            <div class="infoSection" id="paymentContainer">
+                <div class="infoSectionTitle">
+                    <h2>
+                        Payment
+                    </h2>
+                </div>
+
+                <div class="infoSection infoSectionForm text-center" id="customerFormDiv">
+                    <form>
+                        <label class="inputLabel">BILLING INFORMATION</label>
+                        <div class="form-group row">
+                            <label for="fullNameInput" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="fullNameInput" placeholder="Full Name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="addressInput" class="col-5 col-form-label text-right inputLabel">Address</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="addressInput" placeholder="Address"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cityInput" class="col-5 col-form-label text-right inputLabel">City</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="cityInput" placeholder="City"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalInput" class="col-5 col-form-label text-right inputLabel">Postal Code</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="postalInput" placeholder="Postal Code"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="provinceInput" class="col-5 col-form-label text-right inputLabel">Province</label>
+                            <div class="col-3 dropdown">
+                                <select id="provinceInput" class="btn dropdown-toggle">
+                                    <option value=""></option>
+                                    <option value="AB">AB</option>
+                                    <option value="BC">BC</option>
+                                    <option value="MN">MN</option>
+                                    <option value="NB">NB</option>
+                                    <option value="NL">NL</option>
+                                    <option value="NS">NS</option>
+                                    <option value="NT">NT</option>
+                                    <option value="NU">NU</option>
+                                    <option value="ON">ON</option>
+                                    <option value="PE">PE</option>
+                                    <option value="QC">QC</option>
+                                    <option value="SK">SK</option>
+                                    <option value="YT">YT</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="text-center" id="customerFormDiv">
+                            <label class="inputLabel">CREDIT CARD INFO</label>
+                            <div class="form-group row">
+                                <label for="fullNameInput" class="col-5 col-form-label text-right inputLabel">Full Name</label>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" id="fullNameInput" placeholder="Full Name"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postalInput" class="col-5 col-form-label text-right inputLabel">Card Number</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="postalInput" placeholder="Card Number"/>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form-group row">
+                        <label for="cvvInput" class="col-5 col-form-label text-right inputLabel">CVV</label>
+                        <div class="col-7">
+                            <input type="text" class="form-control" id="cvvInput" placeholder="CVV"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="monthInput" class="col-5 col-form-label text-right inputLabel">Expiry</label>
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-3 dropdown">
+                                    <select id="monthInput" class="btn dropdown-toggle">
+                                        <option value=""></option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-3 dropdown">
+                                    <select id="yearInput" class="btn dropdown-toggle">
+                                        <option value=""></option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="infoSection">
+                    <div class="text-center" id="repInfoFormDiv">
+                        <button class="btn btn-warning text-white" id="adminSubmitButton">
+                            SUBMIT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        <script src="../../static/apis.js"></script>
+        <script src="../../static/buttonFunctions.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
